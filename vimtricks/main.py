@@ -13,7 +13,8 @@ async def get_vimtrick() -> str:
 
 async def main():
     async with Client(mcp) as client:
-        await client.call_tool("get_vimtrick")
+        res = await client.call_tool("get_vimtrick")
+        print(res[0].text)
 
 if __name__ == "__main__":
     asyncio.run(main())
